@@ -21,12 +21,15 @@ body {
   grid-template-columns: 1fr 320px;
   gap: 1.5rem;
   padding: 1.5rem;
+  align-items: start; 
 }
 
 .catalog {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 1rem;
+  align-items: start;
+  align-content: start;
 }
 
 .cart {
@@ -40,6 +43,7 @@ body {
   gap: 1rem;
   position: sticky;
   top: 5rem;
+  color: #0f172a;
 }
 
 #checkout-btn {
@@ -57,15 +61,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: .5rem;
-}
-
-@media (max-width: 900px) {
-  .layout {
-    grid-template-columns: 1fr;
-  }
-  .cart {
-    position: static;
-  }
 }
 
 .product {
@@ -97,3 +92,38 @@ body {
   border-radius: .5rem;
   cursor: pointer;
 }
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  gap: .5rem;
+  align-items: flex-start;
+}
+
+.cart-item > div:first-child {
+  flex: 1 1 0;
+  min-width: 0;
+  overflow-wrap: anywhere; 
+}
+
+.qty-controls button {
+  width: 28px;
+  height: 28px;
+  margin-left: .25rem;
+  border: none;
+  background: #1e293b;
+  color: #e2e8f0;
+  border-radius: .25rem;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .cart {
+    position: static;
+  }
+}
+
+

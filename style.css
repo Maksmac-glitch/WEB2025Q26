@@ -3,12 +3,17 @@
 body {
   margin: 0;
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
 }
 
-.top {
+.topbar {
   background: #020617;
   color: #e2e8f0;
   padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .layout {
@@ -19,15 +24,46 @@ body {
 }
 
 .catalog {
-  min-height: 200px;
-  background: #f8fafc;
-  padding: 1rem;
-  border-radius: .5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
 }
 
 .cart {
   background: #e2e8f0;
   padding: 1rem;
+  border: 1px solid rgba(148,163,184,.2);
   border-radius: .5rem;
   height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: sticky;
+  top: 5rem;
+}
+
+#checkout-btn {
+  background: #38bdf8;
+  border: none;
+  padding: .4rem .9rem;
+  border-radius: .5rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #020617;
+}
+
+.cart-footer {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .cart {
+    position: static;
+  }
 }

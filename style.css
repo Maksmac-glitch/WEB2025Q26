@@ -1,0 +1,33 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.top {
+  background: #020617;
+  color: #e2e8f0;
+  padding: 1rem 1.5rem;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.catalog {
+  min-height: 200px;
+  background: #f8fafc;
+  padding: 1rem;
+  border-radius: .5rem;
+}
+
+.cart {
+  background: #e2e8f0;
+  padding: 1rem;
+  border-radius: .5rem;
+  height: fit-content;
+}

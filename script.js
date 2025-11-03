@@ -1,9 +1,9 @@
 const products = [
-  { id: 1, name: "RTX 4070 Super", price: 69990 },
-  { id: 2, name: "MSI B550 Tomahawk", price: 14990 },
-  { id: 3, name: "Ryzen 7 5700X", price: 18990 },
-  { id: 4, name: "Kingston Fury 32GB (2x16) DDR4", price: 9990 },
-  { id: 5, name: "Samsung 990 Pro 1TB", price: 12990 },
+  { id: 1, name: "RTX 4070 Super", price: 69990, image: "img/4070.png" },
+  { id: 2, name: "MSI B550 Tomahawk", price: 14990, image: "img/b550.png" },
+  { id: 3, name: "Ryzen 7 5700X", price: 18990, image: "img/5700x.png" },
+  { id: 4, name: "Kingston Fury 32GB (2x16) DDR4", price: 9990, image: "img/fury.png" },
+  { id: 5, name: "Samsung 990 Pro 1TB", price: 12990, image: "img/990pro.png" },
 ];
 
 const productList = document.getElementById("product-list");
@@ -19,7 +19,15 @@ function appendProducts() {
   products.forEach((p) => {
     const card = document.createElement("article");
     card.className = "product";
+    const hasImage = p.image && p.image.trim() !== "";
     card.innerHTML = `
+      <div class="product-img">
+        ${
+          hasImage
+            ? `<img src="${p.image}" alt="${p.name}">`
+            : `<div class="product-img-placeholder">Нет фото</div>`
+        }
+      </div>
       <div class="product-title">${p.name}</div>
       <div class="product-price">${p.price} ₽</div>
       <button data-id="${p.id}">Добавить</button>

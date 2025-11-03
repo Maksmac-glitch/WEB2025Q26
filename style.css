@@ -71,10 +71,37 @@ body {
   display: flex;
   flex-direction: column;
   gap: .5rem;
+  min-height: 260px;
+}
+
+.product-img {
+  height: 140px;
+  background: rgba(15,23,42,.35);
+  border-radius: .5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.product-img-placeholder {
+  font-size: .8rem;
+  color: #94a3b8;
+  text-align: center;
 }
 
 .product-title {
   font-weight: 600;
+  line-height: 1.2;
+  min-height: 2.6rem;
+  overflow-wrap: anywhere;
 }
 
 .product-price {

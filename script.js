@@ -94,3 +94,30 @@ function removeFromCart(id) {
 
 appendProducts();
 appendCart();
+
+const ordWindow = document.getElementById("ordwindow");
+const checkoutBtn = document.getElementById("checkout-btn");
+const closeOrdWindowBtn = document.getElementById("closeordwindow");
+const orderForm = document.getElementById("orderform");
+
+if (checkoutBtn) {
+  checkoutBtn.addEventListener("click", () => {
+    ordWindow.classList.remove("hidden");
+  });
+}
+
+if (closeOrdWindowBtn) {
+  closeOrdWindowBtn.addEventListener("click", () => {
+    ordWindow.classList.add("hidden");
+  });
+}
+
+if (orderForm) {
+  orderForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    alert("Заказ создан!");
+    ordWindow.classList.add("hidden");
+    cart = [];
+    appendCart();
+  });
+}

@@ -117,6 +117,96 @@ body {
   cursor: pointer;
 }
 
+.ordwindow {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, .8);
+  display: grid;
+  place-items: center;
+  z-index: 50;
+}
+
+.hidden {
+  display: none;
+}
+
+.ordwindowContent {
+  background: #020617;
+  border: 1px solid rgba(148,163,184,.25);
+  border-radius: 1rem;
+  width: min(520px, 100%);
+  box-shadow: 0 20px 40px rgba(0,0,0,.25);
+  padding: 1.5rem 1.5rem 1.25rem;
+}
+
+.ordwindowcontent h2 {
+  margin: 0 0 1rem;
+  font-size: 1.4rem;
+}
+
+.ordform {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 1.25rem;
+}
+
+.ordfield {
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+}
+
+.ordfieldwide {
+  grid-column: 1 / -1;
+}
+
+.ordfield span {
+  font-size: .85rem;
+  color: #94a3b8;
+}
+
+.ordfield input {
+  background: #0f172a;
+  border: 1px solid rgba(148,163,184,.3);
+  border-radius: .5rem;
+  padding: .45rem .6rem;
+  color: #e2e8f0;
+}
+
+.ordfield input:focus {
+  outline: 2px solid #38bdf8;
+  outline-offset: 1px;
+}
+
+.ordactions {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: .75rem;
+  justify-content: flex-end;
+  margin-top: .25rem;
+}
+
+.ordprim {
+  background: #38bdf8;
+  border: none;
+  color: #020617;
+  font-weight: 600;
+  padding: .5rem 1.1rem;
+  border-radius: .5rem;
+  cursor: pointer;
+}
+
+.ordsec {
+  background: transparent;
+  border: 1px solid rgba(148,163,184,.4);
+  color: #e2e8f0;
+  padding: .5rem 1rem;
+  border-radius: .5rem;
+  cursor: pointer;
+}
+
+
+
 @media (max-width: 900px) {
   .layout {
     grid-template-columns: 1fr;
@@ -126,4 +216,19 @@ body {
   }
 }
 
+@media (max-width: 540px) {
+  .ord-window__content {
+    width: 100%;
+  }
+  .ord-form {
+    grid-template-columns: 1fr;
+  }
+  .ord-actions {
+    justify-content: stretch;
+    flex-direction: column;
+  }
+  .ord-actions button {
+    width: 100%;
+  }
+}
 

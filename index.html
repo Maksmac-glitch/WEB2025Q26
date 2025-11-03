@@ -25,6 +25,34 @@
     </aside>
   </main>
 
+  <div class="ordwindow hidden" id="ordwindow">
+    <div class="ordwindowContent">
+      <h2>Оформление заказа</h2>
+      <form id="orderform" class="ordform">
+        <label class="ordfield">
+            <span>Имя</span>
+            <input name="firstName" required />
+        </label>
+        <label class="ordfield">
+            <span>Фамилия</span>
+            <input name="lastName" required />
+       </label>
+       <label class="ordfield ordfieldwide">
+            <span>Адрес доставки</span>
+            <input name="address" required />
+       </label>
+       <label class="ordfield">
+            <span>Телефон</span>
+            <input name="phone" required />
+       </label>
+       <div class="ordactions">
+            <button type="submit" class="ordprim">Создать заказ</button>
+            <button type="button" id="closeordwindow" class="ordsec">Отмена</button>
+       </div>
+      </form>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
